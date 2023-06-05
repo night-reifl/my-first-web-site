@@ -38,3 +38,21 @@ body{
       border-bottom:none;
     }
   }
+ 
+  /* 주간 모드 스타일 */
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  /* 야간 모드 스타일 */
+  body.dark-mode {
+    background-color: #111;
+    color: #fff;
+  }
+  
+  /* 야간 모드에서 제목과 목차 색상 변경 */
+  body.dark-mode h1 a,
+  body.dark-mode ol li a {
+    color: #fff;
+  }
