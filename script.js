@@ -1,11 +1,14 @@
 
-// 버튼 클릭 시 야간 모드와 주간 모드 전환
-function toggleDarkMode() {
-  var body = document.body;
-  body.classList.toggle("dark-mode");
-}
+window.addEventListener('DOMContentLoaded', () => {
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('night-mode');
+    const isNightMode = document.body.classList.contains('night-mode');
+    localStorage.setItem('nightMode', isNightMode);
+  });
 
-var button = document.createElement("button");
-button.textContent = "모드 전환";
-button.addEventListener("click", toggleDarkMode);
-document.body.appendChild(button);
+  const isNightMode = localStorage.getItem('nightMode') === 'true';
+  if (isNightMode) {
+    document.body.classList.add('night-mode');
+  }
+});
