@@ -12,3 +12,13 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('night-mode');
   }
 });
+function updateDateTime() {
+  var now = new Date();
+  var date = now.toLocaleDateString();
+  var time = now.toLocaleTimeString();
+
+  var datetimeElement = document.getElementById('datetime');
+  datetimeElement.innerHTML = date + ' ' + time;
+}
+
+setInterval(updateDateTime, 1000);
